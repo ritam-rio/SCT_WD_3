@@ -1,0 +1,523 @@
+/* ==============================
+   Google Font
+============================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ==============================
+   Global Styles
+============================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#050505;
+    overflow:hidden;
+    position:relative;
+}
+
+/* ==============================
+   Animated Background
+============================== */
+
+body::before{
+    content:"";
+    position:absolute;
+    width:450px;
+    height:450px;
+    background:#00e5ff;
+    border-radius:50%;
+    filter:blur(180px);
+    top:-120px;
+    left:-120px;
+    opacity:.25;
+    animation:float1 8s ease-in-out infinite;
+}
+
+body::after{
+    content:"";
+    position:absolute;
+    width:450px;
+    height:450px;
+    background:#8b5cf6;
+    border-radius:50%;
+    filter:blur(180px);
+    bottom:-120px;
+    right:-120px;
+    opacity:.25;
+    animation:float2 8s ease-in-out infinite;
+}
+
+@keyframes float1{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(40px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes float2{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-40px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+/* ==============================
+   Main
+============================== */
+
+main{
+    position:relative;
+    z-index:10;
+    width:100%;
+    max-width:700px;
+    text-align:center;
+}
+
+/* ==============================
+   Heading
+============================== */
+
+h1{
+    color:white;
+    font-size:3rem;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    color:#9ca3af;
+    margin-bottom:40px;
+    font-size:1rem;
+}
+
+/* ==============================
+   Glass Game Container
+============================== */
+
+.container{
+
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+.game{
+
+    width:min(420px,90vw);
+    aspect-ratio:1 / 1;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+    grid-template-rows:repeat(3,1fr);
+
+    gap:18px;
+
+    padding:18px;
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    border-radius:30px;
+
+    backdrop-filter:blur(15px);
+
+    box-shadow:
+    0 0 30px rgba(0,0,0,.5),
+    0 0 50px rgba(0,229,255,.1);
+
+}
+
+/* ==============================
+   Boxes
+============================== */
+
+.box{
+
+    width:100%;
+    height:100%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border:none;
+    border-radius:20px;
+
+    background:rgba(255,255,255,.05);
+
+    color:white;
+
+    font-size:4rem;
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    backdrop-filter:blur(10px);
+
+    box-shadow:
+        inset 0 0 10px rgba(255,255,255,.05),
+        0 10px 25px rgba(0,0,0,.4);
+
+}
+
+.box:hover{
+
+    transform:translateY(-6px) scale(1.05);
+
+    background:#00bcd4;
+
+    color:white;
+
+    box-shadow:
+        0 0 20px #00e5ff,
+        0 0 40px rgba(0,229,255,.4);
+
+}
+
+.box:disabled{
+
+    cursor:not-allowed;
+
+}
+/* ==============================
+   Buttons
+============================== */
+
+.controls{
+
+    margin-top:35px;
+
+}
+
+#reset-btn,
+#new-btn{
+
+    padding:14px 35px;
+
+    border:none;
+
+    border-radius:50px;
+
+    color:white;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    background:linear-gradient(135deg,#00bcd4,#7c3aed);
+
+    transition:.35s;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.4);
+
+}
+
+#reset-btn:hover,
+#new-btn:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+
+    0 0 20px #00e5ff,
+
+    0 0 40px rgba(0,229,255,.3);
+
+}
+
+/* ==============================
+   Winner Popup
+============================== */
+
+.msg-container{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.8);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:999;
+
+}
+
+.popup{
+
+    width:380px;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    background:#111;
+
+    border:1px solid rgba(255,255,255,.1);
+
+    text-align:center;
+
+    animation:popup .5s ease;
+
+}
+
+@keyframes popup{
+
+    from{
+
+        transform:scale(.7);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+.trophy{
+
+    font-size:4rem;
+
+    color:gold;
+
+    margin-bottom:20px;
+
+}
+
+#msg{
+
+    color:white;
+
+    font-size:1.6rem;
+
+    margin-bottom:25px;
+
+}
+
+.hide{
+
+    display:none;
+
+}
+
+/* ==============================
+   Responsive
+============================== */
+
+@media(max-width:600px){
+
+    h1{
+
+        font-size:2.2rem;
+
+    }
+
+    .game{
+
+        width:92vw;
+
+        height:92vw;
+
+        gap:12px;
+
+        padding:18px;
+
+    }
+
+    .box{
+
+        font-size:3rem;
+
+    }
+
+    .popup{
+
+        width:90%;
+
+    }
+
+}
+/* ======================================
+   Premium Responsive Improvements
+====================================== */
+
+html{
+    font-size:16px;
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh;
+    padding:20px;
+}
+
+/* Flexible Game Board */
+
+.game{
+    width:min(420px,90vw);
+    height:min(420px,90vw);
+}
+
+/* Flexible Popup */
+
+.popup{
+    width:min(380px,90vw);
+}
+
+/* Responsive Heading */
+
+h1{
+    font-size:clamp(2rem,5vw,3rem);
+}
+
+/* Responsive Buttons */
+
+#reset-btn,
+#new-btn{
+
+    width:100%;
+    max-width:260px;
+
+}
+
+/* Better Button Spacing */
+
+.controls{
+
+    display:flex;
+    justify-content:center;
+
+}
+
+/* Tablet */
+
+@media(max-width:768px){
+
+    .subtitle{
+
+        font-size:.95rem;
+
+    }
+
+}
+
+/* Mobile */
+
+@media(max-width:600px){
+
+    body{
+
+        padding:15px;
+
+    }
+
+    .game{
+
+        width:92vw;
+        height:92vw;
+        gap:12px;
+        padding:15px;
+
+    }
+
+    .box{
+
+        font-size:3rem;
+
+    }
+
+    .popup{
+
+        width:92%;
+
+        padding:30px;
+
+    }
+
+}
+
+/* Small Phones */
+
+@media(max-width:400px){
+
+    h1{
+
+        font-size:2rem;
+
+    }
+
+    .subtitle{
+
+        font-size:.85rem;
+
+    }
+
+    .game{
+
+        gap:10px;
+
+        padding:12px;
+
+    }
+
+    .box{
+
+        font-size:2.4rem;
+
+        border-radius:15px;
+
+    }
+
+    #msg{
+
+        font-size:1.2rem;
+
+    }
+
+}

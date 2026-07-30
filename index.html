@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Tic-Tac-Toe</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Winner Popup -->
+    <div class="msg-container hide">
+
+        <div class="popup">
+
+            <i class="fa-solid fa-trophy trophy"></i>
+
+            <h2 id="msg">
+                Congratulations!
+            </h2>
+
+            <button id="new-btn">
+                <i class="fa-solid fa-rotate-right"></i>
+                New Game
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- Main Game -->
+    <main>
+
+        <header>
+
+            <h1>
+                <i class="fa-solid fa-gamepad"></i>
+                Tic Tac Toe
+            </h1>
+
+           <p class="subtitle" id="status">
+    Player O's Turn
+</p>
+
+        </header>
+
+        <section class="game-section">
+
+            <div class="container">
+
+                <div class="game">
+
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <div class="controls">
+
+            <button id="reset-btn">
+                <i class="fa-solid fa-arrows-rotate"></i>
+                Reset Game
+            </button>
+
+        </div>
+
+    </main>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
