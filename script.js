@@ -1,7 +1,3 @@
-// ==========================
-// Select Elements
-// ==========================
-
 const boxes = document.querySelectorAll(".box");
 const resetBtn = document.getElementById("reset-btn");
 const newBtn = document.getElementById("new-btn");
@@ -9,16 +5,8 @@ const msgContainer = document.querySelector(".msg-container");
 const msg = document.getElementById("msg");
 const status = document.getElementById("status");
 
-// ==========================
-// Game Variables
-// ==========================
-
 let turnO = true;
 let moveCount = 0;
-
-// ==========================
-// Winning Patterns
-// ==========================
 
 const winPatterns = [
     [0,1,2],
@@ -33,10 +21,6 @@ const winPatterns = [
     [2,4,6]
 ];
 
-// ==========================
-// Update Turn
-// ==========================
-
 function updateTurn(){
 
     if(!status) return;
@@ -46,11 +30,6 @@ function updateTurn(){
         : "Player <b>X</b>'s Turn";
 
 }
-
-// ==========================
-// Enable Boxes
-// ==========================
-
 function enableBoxes(){
 
     boxes.forEach(box=>{
@@ -65,11 +44,6 @@ function enableBoxes(){
     });
 
 }
-
-// ==========================
-// Disable Boxes
-// ==========================
-
 function disableBoxes(){
 
     boxes.forEach(box=>{
@@ -79,10 +53,6 @@ function disableBoxes(){
     });
 
 }
-
-// ==========================
-// Reset Game
-// ==========================
 
 function resetGame(){
 
@@ -97,10 +67,6 @@ function resetGame(){
 
 }
 
-// ==========================
-// Draw Game
-// ==========================
-
 function drawGame(){
 
     msg.innerHTML="🤝 It's a Draw!";
@@ -110,10 +76,6 @@ function drawGame(){
     disableBoxes();
 
 }
-
-// ==========================
-// Winner Popup
-// ==========================
 
 function showWinner(player,pattern){
 
@@ -135,10 +97,6 @@ boxes[index].style.transform = "scale(1.08)";
     disableBoxes();
 
 }
-
-// ==========================
-// Check Winner
-// ==========================
 
 function checkWinner(){
 
@@ -168,10 +126,6 @@ function checkWinner(){
     return false;
 
 }
-
-// ==========================
-// Box Click
-// ==========================
 
 boxes.forEach(box=>{
 
@@ -221,16 +175,7 @@ boxes.forEach(box=>{
 
 });
 
-// ==========================
-// Buttons
-// ==========================
-
 resetBtn.addEventListener("click",resetGame);
 
 newBtn.addEventListener("click",resetGame);
-
-// ==========================
-// Start Game
-// ==========================
-
 updateTurn();
