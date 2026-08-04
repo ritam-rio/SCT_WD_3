@@ -6,17 +6,12 @@
     <title>Premium Tic-Tac-Toe</title>
 
     <link rel="stylesheet" href="style.css">
-
-   
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-   
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 
 <body>
-
     <div class="msg-container hide">
 
         <div class="popup">
@@ -35,8 +30,6 @@
         </div>
 
     </div>
-
-  
     <main>
 
         <header>
@@ -51,7 +44,30 @@
 </p>
 
         </header>
+        <div class="game-mode">
 
+    <button id="pvp-btn" class="mode-btn active">
+        <i class="fa-solid fa-users"></i>
+        Player vs Player
+    </button>
+
+    <button id="ai-btn" class="mode-btn">
+        <i class="fa-solid fa-robot"></i>
+        Player vs Computer
+    </button>
+
+</div>
+<div class="difficulty hide" id="difficulty">
+
+    <button id="medium-btn" class="difficulty-btn active">
+        Medium
+    </button>
+
+    <button id="hard-btn" class="difficulty-btn">
+        Hard
+    </button>
+
+</div>
         <section class="game-section">
 
             <div class="container">
@@ -86,8 +102,6 @@
         </div>
 
     </main>
-
-   
     <script src="script.js"></script>
 
 </body>
