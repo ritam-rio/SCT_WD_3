@@ -80,10 +80,29 @@ function drawGame(){
 }
 function showWinner(player,pattern){
 
+ if (gameMode === "computer") {
+
+    if (player === "X") {
+
+        msg.innerHTML = `
+🤖 Computer Wins!<br>
+Better luck next time.`;
+
+    } else {
+
+        msg.innerHTML = `
+🎉 Congratulations!<br>
+You Win!`;
+
+    }
+
+} else {
+
     msg.innerHTML = `
 🏆 Congratulations!<br>
 Player <span style="color:#00E5FF;">${player}</span> Wins`;
 
+}
     pattern.forEach(index=>{
 
        boxes[index].style.background = "#00E676";
